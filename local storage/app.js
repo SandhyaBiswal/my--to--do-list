@@ -8,14 +8,14 @@ function saveTask(e){
    	title,
    	description
    };
-   if(localStorage.getItem('task')=== null){
+   if(localStorage.getItem('tasks')=== null){
    	let tasks = [];
-   	task.push(tasks);
-   	localStorage.setitem('task',JSON.stringify(tasks));
+   	tasks.push(task);
+   	localStorage.setItem('tasks',JSON.stringify(tasks));
    } else{
    	let tasks = JSON.parse(localStorage.getItem('tasks'));
    	tasks.push(task);
-   	localStorage.section('tasks',JSON.stringify('tasks'));
+   	localStorage.setItem('tasks',JSON.stringify('tasks'));
    }
    getTasks();
 
@@ -27,7 +27,7 @@ function saveTask(e){
     //Delete to Do
     function deleteTask(title){
     	let tasks = JSON.parse(localStorage.getItem('tasks'));
-    	for (var i = 0; i< tasks.length; i++) {
+    	for (let i = 0; i< tasks.length; i++) {
     		if (tasks[i].title == title) {
     			tasks.splice(i, 1);
     		}
