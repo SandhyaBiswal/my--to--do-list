@@ -32,13 +32,13 @@ function saveTask(e){
     			tasks.splice(i, 1);
     		}
     	}
-    	localStorage.setItem('tasks',JSON.stringify('tasks'));
+    	localStorage.setItem('tasks',JSON.stringify(tasks));
     	getTasks();
     
     }
 
     //Show to Do
-    function getTask(){
+    function getTasks(){
     	let tasks = JSON.parse(localStorage.getItem('tasks'));
     	let tasksView = document.getElementById('tasks');
     	tasksView.innerHTML = '';
@@ -51,7 +51,7 @@ function saveTask(e){
 
 
     		tasksView.innerHTML +=
-            `<div class="card-mb-3">
+            `<div class="card mb-3">
     		<div class ="card-body">
     		<div class= "row">
     		<div class= "col-sm-3 text-left">
